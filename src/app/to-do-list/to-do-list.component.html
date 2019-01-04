@@ -1,0 +1,7 @@
+<div *ngIf="nextUp" class="next-up">
+    <rtd-to-do-item [title]="nextUp.title"></rtd-to-do-item>
+</div>
+<button mat-button class="randomize-button" (click)="getNext()">Get Next</button>
+<div class="list-wrapper">
+    <rtd-to-do-item *ngFor="let item of toDos" [title]="item.title"></rtd-to-do-item>
+</div>
