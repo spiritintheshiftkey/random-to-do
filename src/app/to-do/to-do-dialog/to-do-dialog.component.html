@@ -1,6 +1,6 @@
 <mat-dialog-content>
-    <input matInput placeholder="Title">
-    <mat-checkbox></mat-checkbox>
+    <input matInput placeholder="Title" [(ngModel)]="data.title">
+    <mat-checkbox [(ngModel)]="data.active">Active</mat-checkbox>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancel</button>

@@ -1,0 +1,15 @@
+<mat-dialog-content>
+    <h5>Pick Date And Time</h5>
+    <mat-form-field>
+        <input matInput placeholder="Date" [(ngModel)]="date" [matDatepicker]="myDatepicker">
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Time" type="time">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button (click)="save()">Save</button>
+</mat-dialog-actions>

@@ -1,3 +1,20 @@
-<div class="item-wrapper">
-    <div class="item-title">{{ title }}</div>
+<div class="item-wrapper" fxLayout="row">
+    <div class="item-title">{{ toDo.title }}</div>
+    <button mat-icon-button class="check-button" (click)="complete()">
+        <mat-icon>check</mat-icon>
+    </button>
+    <button mat-icon-button class="check-button" (click)="schedule()">
+        <mat-icon>schedule</mat-icon>
+    </button>
+    <mat-menu #scheduleMenu="matMenu">
+        <button mat-menu-item (click)="schedule('hour')">Snooze 1 Hour</button>
+        <button mat-menu-item (click)="schedule('day')">Snooze until 9AM Tomorrow</button>
+        <button mat-menu-item (click)="schedule('custom')">
+            <mat-icon>event</mat-icon><span>Pick Date and Time</span>
+        </button>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="scheduleMenu">
+        <mat-icon>schedule</mat-icon>
+    </button>
 </div>

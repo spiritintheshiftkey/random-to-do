@@ -13,10 +13,21 @@ const FAKE_TODOS: ToDo[] = [
     providedIn: 'root'
 })
 export class ToDoService {
+    private allToDos: ToDo[] = FAKE_TODOS;
 
     constructor() { }
 
     public getActive(): Observable<ToDo[]> {
-        return of(FAKE_TODOS.filter((toDo: ToDo) => toDo.active));
+        return of(this.allToDos.filter((toDo: ToDo) => toDo.active));
+    }
+
+    public checkForReactivation(): void {
+        const now = new Date();
+        this.allToDos.forEach((toDo: ToDo) => {
+            if (toDo.reactivate < now) {
+                toDo.reactivate = undefined;
+                toDo.active = true;
+            }
+        });
     }
 }

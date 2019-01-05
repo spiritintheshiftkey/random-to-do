@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'rtd-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    template: '<router-outlet></router-outlet>'
 })
 export class AppComponent {
-    title = 'app';
+    title = 'Random To-Do List';
 }

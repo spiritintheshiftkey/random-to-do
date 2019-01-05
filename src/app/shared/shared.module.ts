@@ -14,6 +14,7 @@ import { MaterialModule } from '../material/material.module';
 
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DateTimeDialogComponent } from './date-time-dialog/date-time-dialog.component';
 
 @NgModule({
     imports: [
@@ -44,7 +45,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
         // ColumnSplitPipe,
         ConfirmationDialogComponent,
         NotFoundComponent,
-        ConfirmationDialogComponent
+        ConfirmationDialogComponent,
+        DateTimeDialogComponent
     ],
     entryComponents: [
         ConfirmationDialogComponent
