@@ -2,24 +2,23 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
-    selector: 'rtd-to-do-dialog',
-    templateUrl: './to-do-dialog.component.html',
-    styleUrls: ['./to-do-dialog.component.css']
+    selector: 'rtd-confirmation-dialog',
+    templateUrl: './confirmation-dialog.component.html',
+    styleUrls: ['./confirmation-dialog.component.css']
 })
-export class ToDoDialogComponent {
+export class ConfirmationDialogComponent {
     public action: string;
     public name: string;
 
     constructor(
-        private dialog: MatDialogRef<ToDoDialogComponent>,
+        private dialog: MatDialogRef<ConfirmationDialogComponent>,
         @Inject(MAT_DIALOG_DATA) data: any
     ) {
-        this.name = data.name;
         this.action = data.action;
+        this.name = data.name;
     }
 
     public confirm(): void {
         this.dialog.close(true);
     }
 }
-

@@ -1,0 +1,8 @@
+<mat-dialog-content>
+    <h5>Are You Sure?</h5>
+    <div>Are you sure you wish to {{ action && name ? action + ' ' + name + '?' : 'make this change?' }}</div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button (click)="confirm()">{{ action ? action : 'Confirm' }}</button>
+</mat-dialog-actions>

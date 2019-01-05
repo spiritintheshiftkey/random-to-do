@@ -1,0 +1,8 @@
+<mat-dialog-content>
+    <input matInput placeholder="Title">
+    <mat-checkbox></mat-checkbox>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button (click)="save()">{{ data.id ? 'Save' : 'Add' }}</button>
+</mat-dialog-actions>
