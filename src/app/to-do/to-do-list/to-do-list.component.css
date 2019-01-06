@@ -1,0 +1,15 @@
+button {
+    color: #ffffff;
+}
+.randomize-button {
+    background-color: #673AB7;
+    margin-left: 10px;
+}
+.no-next {
+    border: dashed 1px #888888;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px 20px;
+    height: 40px;
+    align-self: center;
+}

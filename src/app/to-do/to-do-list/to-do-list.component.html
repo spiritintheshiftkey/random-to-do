@@ -1,5 +1,8 @@
 <div *ngIf="nextUp" class="next-up">
-    <rtd-to-do-item [toDo]="nextUp"></rtd-to-do-item>
+    <rtd-to-do-item [toDo]="nextUp" [nextUp]="true"></rtd-to-do-item>
+</div>
+<div *ngIf="!nextUp" class="next-up">
+    <div class="no-next">Pick something to do...</div>
 </div>
 <button mat-button class="randomize-button" (click)="getNext()">Get Next</button>
 <div class="list-wrapper">

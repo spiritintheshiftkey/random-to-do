@@ -13,8 +13,8 @@ import { Ng2PaginationModule } from 'ng2-pagination';
 import { MaterialModule } from '../material/material.module';
 
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { DateTimeDialogComponent } from './date-time-dialog/date-time-dialog.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
     imports: [
@@ -49,7 +49,8 @@ import { DateTimeDialogComponent } from './date-time-dialog/date-time-dialog.com
         DateTimeDialogComponent
     ],
     entryComponents: [
-        ConfirmationDialogComponent
+        ConfirmationDialogComponent,
+        DateTimeDialogComponent
     ]
 })
 export class SharedModule { }

@@ -12,6 +12,7 @@ import { DateTimeDialogComponent } from 'src/app/shared/date-time-dialog/date-ti
 export class ToDoItemComponent {
     @Output() public changed = new EventEmitter<ToDo>();
     @Input() public toDo: ToDo;
+    @Input() public nextUp: boolean;
 
     constructor(
         private dialog: MatDialog
@@ -27,12 +28,12 @@ export class ToDoItemComponent {
         switch (type) {
             case 'hour':
                 this.toDo.reactivate = new Date(now.setHours(now.getHours() + 1));
-                this.toDo.active = false;
+                this.complete();
                 break;
             case 'day':
                 const tomorrowSameTime = new Date(now.setDate(now.getDate() + 1));
                 this.toDo.reactivate = new Date(tomorrowSameTime.setHours(9, 0, 0));
-                this.toDo.active = false;
+                this.complete();
                 break;
             case 'custom':
             default:
@@ -40,10 +41,10 @@ export class ToDoItemComponent {
                 dialogRef.afterClosed().subscribe((dateTime: Date) => {
                     if (dateTime) {
                         this.toDo.reactivate = dateTime;
-                        this.toDo.active = false;
+                        this.complete();
                     }
                 });
+                break;
         }
-        this.changed.emit(this.toDo);
     }
 }

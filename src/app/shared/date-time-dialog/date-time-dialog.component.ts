@@ -14,7 +14,7 @@ export class DateTimeDialogComponent {
         private dialog: MatDialogRef<DateTimeDialogComponent>
     ) {
         this.date = new Date();
-        this.time = this.date.toTimeString();
+        this.time = '09:00';
     }
 
     public save(): void {
