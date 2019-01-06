@@ -50,4 +50,15 @@ export class ToDoListComponent implements OnInit {
             });
     }
 
+    public save(changedToDos: ToDo[], resetNextUp?: boolean): void {
+        if (resetNextUp) {
+            this.nextUp = undefined;
+        }
+        this.toDoService.setData(changedToDos);
+        this.toDoService.getActive()
+            .subscribe((toDos: ToDo[]) => {
+                this.toDos = toDos;
+            });
+    }
+
 }

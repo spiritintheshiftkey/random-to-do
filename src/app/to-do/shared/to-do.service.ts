@@ -5,7 +5,7 @@ import { ToDo } from './to-do.model';
 
 const FAKE_TODOS: ToDo[] = [
     { id: 1, title: 'Dishes', active: true },
-    { id: 3, title: 'Chores', active: false },
+    { id: 3, title: 'Chores', active: false, reactivate: new Date('2019-01-05') },
     { id: 2, title: 'Draw', active: true }
 ];
 
@@ -15,9 +15,8 @@ const FAKE_TODOS: ToDo[] = [
 export class ToDoService {
     private allToDos: ToDo[] = FAKE_TODOS;
 
-    constructor() { }
-
     public getActive(): Observable<ToDo[]> {
+        this.checkForReactivation();
         return of(this.allToDos.filter((toDo: ToDo) => toDo.active));
     }
 
@@ -27,6 +26,18 @@ export class ToDoService {
             if (toDo.reactivate < now) {
                 toDo.reactivate = undefined;
                 toDo.active = true;
+            }
+        });
+    }
+
+    public setData(data: ToDo[]): void {
+        data.forEach((editedToDo: ToDo) => {
+            const index = this.allToDos.findIndex((existingToDo: ToDo) => existingToDo.id === editedToDo.id);
+            if (index > -1) {
+                this.allToDos[index] = editedToDo;
+            } else {
+                editedToDo.id = this.allToDos.length;
+                this.allToDos.push(editedToDo);
             }
         });
     }
