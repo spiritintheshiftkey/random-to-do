@@ -1,0 +1,5 @@
+<h3>Library</h3>
+<p>All To-Do items you have used</p>
+<div class="list-wrapper">
+    <rtd-to-do-item *ngFor="let item of toDos" [toDo]="item" (changed)="save([$event])"></rtd-to-do-item>
+</div>

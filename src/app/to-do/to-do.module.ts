@@ -7,6 +7,7 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoItemComponent } from './to-do-item/to-do-item.component';
 import { ToDoDialogComponent } from './to-do-dialog/to-do-dialog.component';
 import { ToDoComponent } from './to-do.component';
+import { LibraryComponent } from './library/library.component';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { ToDoComponent } from './to-do.component';
         ToDoListComponent,
         ToDoItemComponent,
         ToDoDialogComponent,
-        ToDoComponent]
+        ToDoComponent,
+        LibraryComponent]
 })
 export class ToDoModule { }

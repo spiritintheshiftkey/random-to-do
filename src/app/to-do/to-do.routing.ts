@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ToDoComponent } from './to-do.component';
 
+import { LibraryComponent } from './library/library.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
 export const routes: Routes = [
@@ -11,6 +12,7 @@ export const routes: Routes = [
         component: ToDoComponent,
         children: [
             { path: 'list', component: ToDoListComponent },
+            { path: 'library', component: LibraryComponent },
             { path: '', redirectTo: 'list', pathMatch: 'full' }
         ]
     }

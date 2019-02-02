@@ -6,7 +6,8 @@ import { ToDo } from './to-do.model';
 const FAKE_TODOS: ToDo[] = [
     { id: 1, title: 'Dishes', active: true },
     { id: 3, title: 'Chores', active: false, reactivate: new Date('2019-01-05') },
-    { id: 2, title: 'Draw', active: true }
+    { id: 2, title: 'Draw', active: true },
+    { id: 4, title: 'Tidy', active: false }
 ];
 
 @Injectable({
@@ -18,6 +19,11 @@ export class ToDoService {
     public getActive(): Observable<ToDo[]> {
         this.checkForReactivation();
         return of(this.allToDos.filter((toDo: ToDo) => toDo.active));
+    }
+
+    public getAll(): Observable<ToDo[]> {
+        this.checkForReactivation();
+        return of(this.allToDos);
     }
 
     public checkForReactivation(): void {

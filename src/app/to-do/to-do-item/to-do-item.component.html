@@ -1,4 +1,4 @@
-<div class="item-wrapper" [class.next]="nextUp" fxLayout="row" fxLayoutAlign="space-between center">
+<div class="item-wrapper" [class.next]="nextUp" [class.inactive]="!toDo.active" fxLayout="row" fxLayoutAlign="space-between center">
     <div class="item-title">{{ toDo.title }}</div>
     <div class="actions">
         <button mat-icon-button class="check-button" (click)="complete()">
